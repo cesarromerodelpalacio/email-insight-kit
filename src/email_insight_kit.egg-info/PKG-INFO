@@ -1,0 +1,42 @@
+Metadata-Version: 2.4
+Name: email-insight-kit
+Version: 0.1.0
+Summary: Analitica local de tu bandeja de Outlook: volumen, remitentes, no leidos, prioridad. 100% local.
+Author: Cesar Romero del Palacio
+License: MIT
+Keywords: email,outlook,productivity,inbox,analytics,local
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: openpyxl>=3.1
+Provides-Extra: dev
+Requires-Dist: pytest>=8.0; extra == "dev"
+Requires-Dist: pyinstaller>=6.0; extra == "dev"
+Provides-Extra: outlook
+Requires-Dist: pywin32>=306; extra == "outlook"
+Dynamic: license-file
+
+# Email Insight Kit
+
+Analitica **local** de tu bandeja de Outlook. Te dice **quien te inunda**, cuantos no leidos
+tienes, en que franjas horarias llega el correo, que es newsletter vs importante, y una lista de
+**no leidos que requieren accion**. Panel HTML + Excel.
+
+Todo se procesa **en tu maquina** (Outlook Desktop via COM). Nada sube a la nube. Por
+**Cesar Romero del Palacio** · Licencia MIT.
+
+## Uso
+```bash
+pip install -e .
+pip install pywin32           # para leer Outlook (Windows)
+inboxkit --days 30            # lee tu bandeja y genera el panel
+inboxkit --demo               # prueba con bandeja sintetica (sin tocar Outlook)
+```
+
+Requiere **Outlook Desktop abierto** y tu cuenta logueada (no usa Graph ni OAuth).
+
+## Desarrollo
+```bash
+pip install -e ".[dev]"
+pytest -v
+```

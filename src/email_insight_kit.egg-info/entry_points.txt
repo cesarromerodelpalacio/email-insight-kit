@@ -1,0 +1,2 @@
+[console_scripts]
+inboxkit = inboxkit.cli:main

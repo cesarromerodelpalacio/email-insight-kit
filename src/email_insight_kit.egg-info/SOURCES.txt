@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+src/email_insight_kit.egg-info/PKG-INFO
+src/email_insight_kit.egg-info/SOURCES.txt
+src/email_insight_kit.egg-info/dependency_links.txt
+src/email_insight_kit.egg-info/entry_points.txt
+src/email_insight_kit.egg-info/requires.txt
+src/email_insight_kit.egg-info/top_level.txt
+src/inboxkit/__init__.py
+src/inboxkit/__main__.py
+src/inboxkit/analyze.py
+src/inboxkit/cli.py
+src/inboxkit/models.py
+src/inboxkit/outlook_source.py
+src/inboxkit/report.py
+tests/test_inboxkit.py

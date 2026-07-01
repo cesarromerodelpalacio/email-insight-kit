@@ -1,0 +1,28 @@
+[project]
+name = "email-insight-kit"
+version = "0.1.0"
+description = "Analitica local de tu bandeja de Outlook: volumen, remitentes, no leidos, prioridad. 100% local."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Cesar Romero del Palacio" }]
+keywords = ["email", "outlook", "productivity", "inbox", "analytics", "local"]
+dependencies = ["openpyxl>=3.1"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pyinstaller>=6.0"]
+outlook = ["pywin32>=306"]
+
+[project.scripts]
+inboxkit = "inboxkit.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

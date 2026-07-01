@@ -1,0 +1,4 @@
+EMAIL INSIGHT KIT
+================
+Analitica local de tu bandeja de Outlook (100% local, nada a la nube).
+Uso: inboxkit --days 30  (Outlook abierto)  |  inboxkit --demo (sintetico)
