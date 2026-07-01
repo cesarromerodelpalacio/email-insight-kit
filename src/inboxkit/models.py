@@ -1,7 +1,7 @@
 """Modelo generico de correo (desacoplado de Outlook para poder testear)."""
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from datetime import datetime
 
 
@@ -12,6 +12,7 @@ class EmailRecord:
     subject: str
     received: datetime
     unread: bool = False
+    entry_id: str = ""  # id de Outlook (para poder responder); vacio en sinteticos
 
     @property
     def domain(self) -> str:
@@ -19,7 +20,6 @@ class EmailRecord:
         return e.split("@")[-1] if "@" in e else "(desconocido)"
 
 
-# Reglas simples de categorizacion (keyword/dominio). Ampliables.
 _RULES = {
     "newsletter": ["newsletter", "unsubscribe", "noreply", "no-reply", "mailchimp", "sendgrid", "marketing", "boletin"],
     "reunion": ["invitation", "meeting", "calendar", "teams", "zoom", "reunion", "invitacion", "cita"],

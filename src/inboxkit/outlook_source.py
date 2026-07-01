@@ -31,6 +31,7 @@ def read_outlook(days: int = 30, limit: int = 3000) -> list[EmailRecord]:
                 subject=getattr(m, "Subject", "") or "",
                 received=recv,
                 unread=bool(getattr(m, "UnRead", False)),
+                entry_id=getattr(m, "EntryID", "") or "",
             ))
         except Exception:
             continue
@@ -55,3 +56,4 @@ def synthetic_inbox(n: int = 200, seed: int = 7) -> list[EmailRecord]:
         recv = datetime.now() - timedelta(days=rnd.randint(0, 29), hours=rnd.randint(0, 23), minutes=rnd.randint(0, 59))
         out.append(EmailRecord(nm, em, rnd.choice(subjects), recv, unread=rnd.random() < 0.35))
     return out
+
